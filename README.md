@@ -9,3 +9,5 @@ This repository contains the code for the assignemnt in advance database managem
   XML is created using the c# language.
   
   For processing XPATH and XQuery SQL is used.
+  
+  Assignment on Object database is created using ORACLE database.
