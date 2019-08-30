@@ -1,0 +1,86 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+EXEC SQL INCLUDE SQLCA;  
+int main()
+{
+    EXEC SQL BEGIN DECLARE SECTION;  
+      int id;         /* Employee ID (from user)         */  
+      char name[10];   /* Retrieved salesperson name      */  
+	  char firstname[10];
+	  char lastname[10];
+	  char email[30];
+	  char username[30];
+	EXEC SQL END DECLARE SECTION;  
+
+    EXEC SQL CONNECT TO tcp:postgresql://localhost:5432/Ecommerce USER postgres IDENTIFIED BY letmein99;
+
+	/* Set up error processing */  
+	EXEC SQL WHENEVER SQLERROR GOTO query_error;  
+	EXEC SQL WHENEVER NOT FOUND GOTO bad_number;  
+
+	EXEC SQL DECLARE Ecommerce_info CURSOR FOR SELECT U.firstname,U.lastname, U.email, U.id
+		FROM "user" as U;
+
+	EXEC SQL OPEN Ecommerce_info;
+
+	EXEC SQL WHENEVER NOT FOUND DO BREAK;
+
+	printf("\t\t\t\t************************\n");                                           
+	printf("\t\t\t\t*      List of User    *\n");                                           
+	printf("\t\t\t\t************************\n");   
+
+	printf("%-5s\t\t %-10s\t\t %10s\t\t %20s\n\n","Id","First Name", "Last Name", "Email");
+
+	while (SQLCODE==0)
+	{
+		EXEC SQL FETCH IN Ecommerce_info INTO :firstname,:lastname,:email,:id;
+		
+		printf("%-5d\t\t %-10s\t\t %10s\t\t %20s\n\n",id,firstname,lastname,email);
+
+	}
+
+	
+	printf ("\n Enter email to search: ");  
+	scanf_s("%s", &username, 30);
+
+	EXEC SQL DECLARE user_detail CURSOR FOR SELECT U.firstname,U.lastname, U.email, U.id
+		FROM "user" as U
+		WHERE email = :username;  ;
+
+	EXEC SQL OPEN user_detail;
+
+	EXEC SQL WHENEVER NOT FOUND DO BREAK;
+
+
+	printf("\n\n\t\t\t\t************************\n");                                           
+	printf("\t\t\t\t*      User Details    *\n");                                           
+	printf("\t\t\t\t************************\n");   
+
+	printf("%-5s\t\t %-10s\t\t %10s\t\t %20s\n\n","Id","First Name", "Last Name", "Email");
+
+	while (SQLCODE==0)
+	{
+		EXEC SQL FETCH IN user_detail INTO :firstname,:lastname,:email,:id;
+		
+		printf("%-5d\t\t %-10s\t\t %10s\t\t %20s\n\n",id,firstname,lastname,email);
+
+	}
+
+	printf("\n\n");
+
+    EXEC SQL DISCONNECT;
+
+    query_error:  
+	printf("SQLCODE    = %d\n",sqlca.sqlcode);                                      
+    printf("SQLSTATE    = %5s",sqlca.sqlstate);  
+	return 0; 
+
+	bad_number:  
+	printf ("Invalid order number.\n");  
+	return 0;
+
+    return 0;
+}

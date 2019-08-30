@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookstoredoc SYSTEM "bookstoredoc.dtd"[<!ELEMENT bookstore (book+)>
+                <!ELEMENT book (title|year|price|author+) >
+                <!ATTLIST book
+                    category CDATA #REQUIRED>
+                <!ELEMENT title (#PCDATA)>
+                <!ATTLIST title
+                  lang CDATA #REQUIRED>
+                <!ELEMENT year (#PCDATA)>
+                <!ELEMENT price (#PCDATA)>
+                <!ELEMENT author (name+)>
+                <!ELEMENT name (#PCDATA)>]>
+<bookstore>
+  <book category="COOKING">
+    <title lang="en">Everyday Italian</title>
+    <year>2005</year>
+    <price>30</price>
+    <author>
+      <name>Giada De Laurentiis</name>
+    </author>
+  </book>
+  <book category="CHILDREN">
+    <title lang="en">Harry Potter</title>
+    <year>2005</year>
+    <price>29.99</price>
+    <author>
+      <name>J K. Rowling</name>
+    </author>
+  </book>
+  <book category="WEB">
+    <title lang="en">XQuery Kick Start</title>
+    <year>2003</year>
+    <price>49.99</price>
+    <author>
+      <name>James McGovern</name>
+      <name>Per Bothner</name>
+      <name>Kurt Cagle</name>
+      <name>James Linn</name>
+      <name>Vaidyanathan Nagarajan</name>
+    </author>
+  </book>
+  <book category="WEB">
+    <title lang="en">Learning XML</title>
+    <year>2003</year>
+    <price>39.95</price>
+    <author>
+      <name>Erik T. Ray</name>
+    </author>
+  </book>
+</bookstore>

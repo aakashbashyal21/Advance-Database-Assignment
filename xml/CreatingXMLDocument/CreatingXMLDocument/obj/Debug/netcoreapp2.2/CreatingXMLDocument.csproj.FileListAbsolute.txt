@@ -1,0 +1,11 @@
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\bin\Debug\netcoreapp2.2\CreatingXMLDocument.deps.json
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\bin\Debug\netcoreapp2.2\CreatingXMLDocument.runtimeconfig.json
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\bin\Debug\netcoreapp2.2\CreatingXMLDocument.runtimeconfig.dev.json
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\bin\Debug\netcoreapp2.2\CreatingXMLDocument.dll
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\bin\Debug\netcoreapp2.2\CreatingXMLDocument.pdb
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\obj\Debug\netcoreapp2.2\CreatingXMLDocument.csprojAssemblyReference.cache
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\obj\Debug\netcoreapp2.2\CreatingXMLDocument.csproj.CoreCompileInputs.cache
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\obj\Debug\netcoreapp2.2\CreatingXMLDocument.AssemblyInfoInputs.cache
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\obj\Debug\netcoreapp2.2\CreatingXMLDocument.AssemblyInfo.cs
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\obj\Debug\netcoreapp2.2\CreatingXMLDocument.dll
+C:\Users\Aakash\source\repos\CreatingXMLDocument\CreatingXMLDocument\obj\Debug\netcoreapp2.2\CreatingXMLDocument.pdb
